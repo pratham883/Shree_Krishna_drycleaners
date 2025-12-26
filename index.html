@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional drycleaning, washing, and ironing services in Sujangarh, Rajasthan. Eco-friendly and affordable.">
+    <meta name="keywords" content="drycleaners Sujangarh, laundry services Rajasthan">
+    <title>SHREE KRISHNA DRYCLEANERS - Fast, Reliable Laundry Services</title>
+
+    <!-- Favicon updated to logo -->
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <!-- Bootstrap & fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animate CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #f4f7fa 0%, #e9f0ff 40%, #fdfbff 100%);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(6, 24, 61, 0.9);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+        .navbar-brand span {
+            letter-spacing: 1px;
+        }
+        .navbar-nav .nav-link {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            color: #feca57 !important;
+        }
+
+        /* Hero section */
+        .hero {
+            background:
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.08) 0, transparent 55%),
+                radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.12) 0, transparent 55%),
+                linear-gradient(135deg, #667eea 0%, #764ba2 45%, #f093fb 100%),
+                url('https://via.placeholder.com/1920x600/667eea/FFFFFF?text=Clean+Clothes') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 130px 0 140px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.35));
+            z-index: 1;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: radial-gradient(circle at top, rgba(244, 247, 250, 1) 0, transparent 70%);
+            z-index: 1;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-logo {
+            height: 90px;
+            width: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.4));
+        }
+        .hero h1 {
+            font-weight: 700;
+            font-size: 3.1rem;
+            margin-bottom: 12px;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-subbadge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-custom {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            border: none;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px) scale(1.03);
+            opacity: 0.95;
+            color: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Sections */
+        .section-title {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .section-subtitle {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #6c757d;
+        }
+
+        .services, .pricing, .about, .contact {
+            padding: 80px 0;
+        }
+
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 14px 40px rgba(15, 35, 95, 0.15);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, translate 0.25s ease;
+            margin-bottom: 30px;
+            background: #ffffff;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 55px rgba(15, 35, 95, 0.25);
+        }
+        .card-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        /* Services icons colors */
+        .icon-dry {
+            color: #4e9af1;
+        }
+        .icon-wash {
+            color: #20c997;
+        }
+        .icon-iron {
+            color: #f093fb;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: radial-gradient(circle at top, #fdfbff 0, #f5576c 5%, #f093fb 40%, #f5576c 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.05));
+        }
+        .pricing .container {
+            position: relative;
+            z-index: 2;
+        }
+        .pricing .card {
+            background: rgba(255, 255, 255, 0.96);
+            color: #333;
+            border-top: 4px solid #f5576c;
+        }
+        .price-tag {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #f5576c;
+        }
+
+        .about {
+            background-color: #ffffff;
+        }
+        .about img {
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #eef2ff 0%, #f8f9ff 40%, #f8f9fa 100%);
+        }
+        .contact form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 14px 40px rgba(15, 35, 95, 0.18);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #18243a);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Scroll animation */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with logo -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+                <img src="logo.png" alt="SHREE KRISHNA DRYCLEANERS Logo">
+                <span>SHREE KRISHNA DRYCLEANERS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="container animate-on-scroll text-center">
+            <img src="logo.png" alt="SHREE KRISHNA DRYCLEANERS Logo" class="hero-logo animate__animated animate__fadeInDown">
+            <div class="hero-subbadge animate__animated animate__fadeInUp">
+                Trusted drycleaners in Sujangarh
+            </div>
+            <h1 class="animate__animated animate__fadeInDown">Welcome to SHREE KRISHNA DRYCLEANERS</h1>
+            <p class="animate__animated animate__fadeInUp">Your clothes, our care. Fast, reliable, and affordable laundry services.</p>
+            <a href="#contact" class="btn btn-custom btn-lg animate__animated animate__bounceIn">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="text-center mb-3 fw-bold section-title animate-on-scroll">Our Services</h2>
+            <p class="text-center section-subtitle animate-on-scroll">
+                From delicate drycleaning to everyday washing and crisp ironing, everything is handled with care.
+            </p>
+            <div class="row">
+                <div class="col-md-4 text-center animate-on-scroll">
+                    <div class="card p-4 h-100">
+                        <i class="fas fa-wind card-icon icon-dry"></i>
+                        <h4>Dryclean</h4>
+                        <p>Professional dry cleaning for delicate fabrics using eco-friendly methods.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center animate-on-scroll">
+                    <div class="card p-4 h-100">
+                        <i class="fas fa-soap card-icon icon-wash"></i>
+                        <h4>Wash</h4>
+                        <p>Standard washing service for everyday clothes with gentle care.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center animate-on-scroll">
+                    <div class="card p-4 h-100">
+                        <i class="fas fa-iron card-icon icon-iron"></i>
+                        <h4>Iron</h4>
+                        <p>Precise ironing to keep your clothes crisp and wrinkle-free.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="text-center mb-3 fw-bold section-title animate-on-scroll">Pricing</h2>
+            <p class="text-center section-subtitle text-light animate-on-scroll">
+                Simple, transparent prices so you always know what you will pay.
+            </p>
+            <div class="row">
+                <div class="col-md-4 text-center animate-on-scroll">
+                    <div class="card p-4 h-100">
+                        <i class="fas fa-tags card-icon"></i>
+                        <h4>Dryclean</h4>
+                        <p class="price-tag">120 INR for two pieces</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center animate-on-scroll">
+                    <div class="card p-4 h-100">
+                        <i class="fas fa-water card-icon"></i>
+                        <h4>Wash</h4>
+                        <p class="price-tag">50 INR for two pieces</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center animate-on-scroll">
+                    <div class="card p-4 h-100">
+                        <i class="fas fa-balance-scale card-icon"></i>
+                        <h4>Wash and Iron</h4>
+                        <p class="price-tag">50 INR per kg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="text-center mb-3 fw-bold section-title animate-on-scroll">About Us</h2>
+            <p class="text-center section-subtitle animate-on-scroll">
+                A local, family-run business keeping Sujangarh well-dressed for over a decade.
+            </p>
+            <div class="row align-items-center">
+                <div class="col-md-6 animate-on-scroll mb-4 mb-md-0">
+                    <img src="https://via.placeholder.com/500x300/4CAF50/FFFFFF?text=Our+Shop" alt="SHREE KRISHNA DRYCLEANERS shop" class="img-fluid">
+                </div>
+                <div class="col-md-6 animate-on-scroll">
+                    <p>SHREE KRISHNA DRYCLEANERS has been serving the community for over 10 years with top-notch laundry services. We use eco-friendly detergents and state-of-the-art equipment to ensure your clothes are cleaned safely and efficiently. Our team is dedicated to providing exceptional care for your garments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="text-center mb-3 fw-bold section-title animate-on-scroll">Contact Us</h2>
+            <p class="text-center section-subtitle animate-on-scroll">
+                Reach out for pick-up, delivery, or any questions about your clothes.
+            </p>
+            <div class="row">
+                <div class="col-md-6 animate-on-scroll mb-4 mb-md-0">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label"><i class="fas fa-user"></i> Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label"><i class="fas fa-comment"></i> Message</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6 animate-on-scroll">
+                    <p><i class="fas fa-map-marker-alt"></i> Address: Sujangarh, Rajasthan, India - 331507</p>
+                    <p><i class="fas fa-phone"></i> Phone: +91 7877274767</p>
+                    <div class="mt-3 mb-3">
+                        <a href="https://wa.me/917877274767" target="_blank" class="btn btn-success">
+                            <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                        </a>
+                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.5!2d74.45!3d27.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQyJzAwLjAiTiA3NMKwMjcnMDAuMCJF!5e0!3m2!1sen!2sin!4v1630000000000!5m2!1sen!2sin" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 SHREE KRISHNA DRYCLEANERS. All rights reserved.</p>
+            <div class="mt-3">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+
+        // Scroll animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
